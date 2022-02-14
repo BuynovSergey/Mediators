@@ -1,0 +1,110 @@
+mixin svg(name)
+    svg(class="icon icon-" + name)
+        use(xlink:href="images/sprite/sprite.svg#"+name)
+html(lang='ru') 
+    head 
+        meta(charset='utf-8')
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="shortcut icon", href="images/favicon.ico", type="image/x-icon")
+        link(rel="stylesheet", href="css/style.css")
+        link(rel="stylesheet", href="css/jquery.fancybox.min.css")
+        link(rel="stylesheet", href="owl.carousel.css")
+        link(rel="stylesheet", href="owl.theme.default.css")
+        script(src="js/jquery-1.10.2.js") 
+        script(src="js/main.js")
+        script(src="js/jquery.maskedinput.min.js")
+        script 
+            include js/slider.js
+        title Заголовок title
+    body
+        .top-bisnes 
+            .main 
+                header
+                    .header-bisnes 
+                        .header-bisnes__logo
+                            .header-bisnes__logo-img
+                                a(href="/")
+                                    img(src="images/svg/logo.svg", alt="АНО Калужский Областной ЦЕНТР МЕДИАЦИИ")
+                            .header-bisnes__logo-item
+                                .header-bisnes__logo-item__sm.
+                                    АНО Калужский Областной
+                                .header-bisnes__logo-item__big.
+                                    ЦЕНТР МЕДИАЦИИ
+                        .header-bisnes-menu 
+                            .header-bisnes-menu__item 
+                                a(href="#") О центре
+                            .header-bisnes-menu__dev |
+                            .header-bisnes-menu__item 
+                                a(href="#") Обучение
+                            .header-bisnes-menu__dev |
+                            .header-bisnes-menu__item 
+                                a(href="#") Реестр медиаторов
+                            .header-bisnes-menu__dev |
+                            .header-bisnes-menu__item 
+                                a(href="#") Услуги и цены
+                            .header-bisnes-menu__dev |
+                            .header-bisnes-menu__item 
+                                a(href="#") Контакты
+                .mediator-kat
+                    .mediator-kat-item
+                        .mediator-kat-item__zag семейная медиация
+                        .mediator-kat-item__des Конфликты супругв, родственников в том числе при разводе и в наследственных вопросах.
+                    .mediator-kat-item
+                        .mediator-kat-item__zag бизнес медиация
+                        .mediator-kat-item__des Экономические споры.<br> Трудовые споры.
+                    .mediator-kat-item
+                        .mediator-kat-item__zag социальная медиация
+                        .mediator-kat-item__des Гражданские споры,  ФСИН, школьная и межнациональная медиации.
+                    .mediator-kat-item
+                        .mediator-kat-item__zag медиация<br> в административных<br> и налоговых спорах
+        .whats-meaditors
+            .main 
+                .whats-meaditors-left
+                    .zag.red Что такое медиация
+                    .whats-meaditors__text
+                        p Медиация — это способ мирно разрешить конфликт так, чтобы обе стороны остались довольны результатом и сохранили хорошие или нейтральные отношения. Добиться такого решения помогает беспристрастный специалист — медиатор. В конце процедуры стороны могут подписать документ, фиксирующий договоренности — медиативное соглашение.
+                        p В российском законодательстве медиация появилась в 2011 году, но особого распространения не получила. Это связано с тем, что медиативное соглашение раньше не имело реальной юридической силы: если одна из сторон не соблюдала договоренность, все равно приходилось идти в суд.
+                        p В 2019 году в закон внесли поправки, и теперь медиативное соглашение можно заверить у нотариуса. Тогда в случае неисполнения условий соглашения можно сразу идти к судебному приставу.
+                .whats-meaditors-right 
+                    form.form-callback.template1
+                        .form-callback__zag Записаться на прием
+                        .form-callback__text Напишите сейчас и получите первую консультацию бесплатно
+                        input(type="text", name="f_Email", placeholder='Email')
+                        input(type="text", name="f_Phone", placeholder='Телефон')
+                        input(type="text", name="f_Phone", placeholder='Имя')
+                        .form-callback__text-sm Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь c политикой конфиденциальности
+                        input(type="submit", value="Записаться")
+            -
+                let date = new Date();
+                let arr = ['0'+date.getMonth()+1,'0'+date.getDate()].map(val => val.slice(-2))
+                let datenow = `${arr[1]}.${arr[0]}.${date.getFullYear()}`;
+            .main2(class={new:true, banned:true})
+        .b-block-ico  
+            .zag ПРИНЦИПЫ МЕДИАЦИИ
+            .block-ico
+                .block-ico-item 
+                    .block-ico-item__img
+                        img(src="images/svg/princ1.svg", alt="Добровольность")
+                    .block-ico-item__name Добровольность
+                .block-ico-item 
+                    .block-ico-item__img
+                        img(src="images/svg/princ2.svg", alt="Добровольность")
+                    .block-ico-item__name  Неийтральность<br> медиатора
+                .block-ico-item 
+                    .block-ico-item__img
+                        img(src="images/svg/princ3.svg", alt="Добровольность")
+                    .block-ico-item__name Равноправие <br>и сотрудничество сторон
+                .block-ico-item 
+                    .block-ico-item__img
+                        img(src="images/svg/princ4.svg", alt="Добровольность")
+                    .block-ico-item__name Конфиденциальность
+        .content 
+            +svg('like')
+        footer 
+        #topcontrol(title='К началу страницы')
+        script(src="js/wow.min.js") 
+        script(src="js/jquery.fancybox.min.js") 
+        script 
+            include js/wow.js
+                
+                
